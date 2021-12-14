@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import styled from 'styled-components';
 import CardGroup from '../components/CardGroup';
 import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 import ProductsSidebar from '../components/ProductsSidebar';
 import { useFetch } from '../hooks/useFetch';
 
@@ -12,13 +12,13 @@ const DashboardScreen = () => {
     let {suppliername} = useParams();
     if(!suppliername) suppliername = 'all';
 
-    const { loading, data } = useFetch(`/product/${suppliername}`);
+    const { loading, data } = useFetch(`/product/bysupplier/${suppliername}`);
 
     return (
         <>
-            <Header />
+            <Navbar />
             <Container>
-                <ProductsSidebar url={`/supplier/${suppliername}`} />
+                <ProductsSidebar />
                 <div>
                         {
                             loading ?
@@ -50,4 +50,8 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 20% 80%;
     gap: 2rem;
+
+    @media (max-width: 1200px) {
+        padding: 1rem 1rem 2rem 1rem;
+    }
 `;

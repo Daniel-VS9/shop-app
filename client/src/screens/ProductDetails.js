@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
-import Header from '../components/Header'
+import Navbar from '../components/Navbar'
 import { useFetch } from '../hooks/useFetch'
 
 
@@ -13,7 +13,7 @@ const ProductDetails = () => {
 
     return (
         <>
-            <Header />
+            <Navbar />
 
             {
                 loading ?
@@ -48,7 +48,7 @@ const Container = styled.div`
     display: flex;
     gap: 3rem;
     justify-content: space-evenly;
-    height: 60vh;
+    min-height: 60vh;
 
     @media (max-width: 1020px) {
         .left {

@@ -20,11 +20,31 @@ router.get('/:id', authorizeToken, async(req, res) => {
     const productId = req.params.id
 
     try{
-        const product = await Product.findById(productId);
+        const product = await Product.findOne({_id: productId, user_id: userId});
         return res.json(product)
     } catch (error) {
         console.log(error)
         return res.json({error: true})
+    }
+})
+
+router.get('/bysupplier/:supplierName', authorizeToken, async(req, res) => {
+    const {_id: userId} = req.userData;
+    const {supplierName} = req.params;
+
+    try {
+        let products;
+
+        if(supplierName === 'all') {
+            products = await Product.find({user_id: userId})
+        } else {
+            products = await Product.find({user_id: userId, supplierCode: supplierName})
+        }
+
+        return res.status(200).json(products)
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({error: true})
     }
 })
 

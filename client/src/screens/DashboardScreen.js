@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Chart from 'react-apexcharts'
 
 import Footer from '../components/Footer'
-import Header from '../components/Header'
+import Navbar from '../components/Navbar'
 
 const DashboardScreen = () => {
 
@@ -48,7 +48,7 @@ const DashboardScreen = () => {
 
     return (
         <div>
-            <Header/>
+            <Navbar />
             <Container>
                 <GeneralStatContainer>
                     <GeneralStatBox className='boxOne'>

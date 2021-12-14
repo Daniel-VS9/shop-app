@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
-import Header from '../components/Header'
+import Navbar from '../components/Navbar'
 
 const HomeScreen = () => {
 
     return (
         <>
-            <Header />
+            <Navbar />
             <Container>
                 <Banner>
                     <Title>MediaTic Integrales</Title>

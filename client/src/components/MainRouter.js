@@ -12,6 +12,7 @@ import SalesScreen from '../screens/SalesScreen'
 import SignUpScreen from '../screens/SingUpScreen'
 import NoAuthenticateRoute from './NoAuthenticateRoute'
 import PrivateRoute from './PrivateRoute'
+import AddProductScreen from '../screens/AddProductScreen'
 
 const MainRouter = () => {
 
@@ -38,9 +39,10 @@ const MainRouter = () => {
                 <Route element={<PrivateRoute />} >
                     <Route path='/product' element={<ProductScreen />} />
                     <Route path='/product/:productId' element={<ProductDetails />} />
+                    <Route path='/product/add' element={<AddProductScreen />} />
+                    <Route path='/product/supplier/:suppliername' element={<ProductScreen />} />
                     <Route path='/sale' element={<SalesScreen />} />
                     <Route path='/dashboard' element={<DashboardScreen />} />
-                    <Route path='/product/supplier/:suppliername' element={<ProductScreen />} />
                 </Route>
                 {/* <Route path='*' element={<Navigate to='/' />} /> ANCHOR redirect to 404 page */}
                 <Route path='*' element={<NotFound />} />

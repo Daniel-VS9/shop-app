@@ -5,10 +5,9 @@ import { useFetch } from '../hooks/useFetch'
 import { Link } from 'react-router-dom'
 
 
-const ProductsSidebar = ({url}) => {
+const ProductsSidebar = () => {
 
-    const {loading, data} = useFetch(url)
-    console.log(loading)
+    const {loading, data} = useFetch('/supplier/all')
 
     return (
         <Container>
@@ -16,8 +15,8 @@ const ProductsSidebar = ({url}) => {
                 {
                     (!loading && data.data) &&
                     data.data.map(item => (
-                        <>
-                            <Link to={`/product/supplier/${item.name}`}>
+                        <div key={item._id} >
+                            <Link to={`/product/supplier/${item.name}`} >
                                 <ListItem button key={item.name}>
                                     <ListItemText>
                                         {item.name}
@@ -38,7 +37,7 @@ const ProductsSidebar = ({url}) => {
                                     }
                                 </List>
                             }
-                        </>
+                        </div>
                     ))
                 }
             </List>
@@ -50,7 +49,7 @@ export default ProductsSidebar
 
 const Container = styled.div`
     background-color: white;
-    height: 70vh;
+    min-height: 70vh;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     border-radius: 8px;
 

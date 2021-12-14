@@ -23,6 +23,15 @@ const Header = () => {
                         </Title>
                     </Link>
                 </Item>
+                {/* FIXME Improve javascript */}
+                {
+                    (uid) &&
+                        <Link to='/dashboard'>
+                            <Item>
+                                <span>Dashboard</span>
+                            </Item>
+                        </Link>
+                }
                 {
                     (uid) &&
                         <Link to='/product'>
@@ -33,9 +42,9 @@ const Header = () => {
                 }
                 {
                     (uid) &&
-                        <Link to='/dashboard'>
+                        <Link to='/sale'>
                             <Item>
-                                <span>Dashboard</span>
+                                <span>Ventas</span>
                             </Item>
                         </Link>
                 }

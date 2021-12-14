@@ -10,16 +10,17 @@ const Product = Schema({
         required: true
     },
     price: {
-        type: Number
+        type: Number,
+        required: true
     },
     description: String,
     imagePath: {
         type: String,
         default: ''
     },
-    SupplierCode: {
+    supplierCode: {
         type: String,
-        default: 'Libre'
+        default: 'libre'
     },
     stock: {
         type: Number,
