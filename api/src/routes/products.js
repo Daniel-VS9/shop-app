@@ -1,7 +1,9 @@
 const express = require('express');
-const { authorizeToken } = require('../middlewares/auth.mw');
-const Product = require('../models/Product');
 const router = express.Router()
+
+const { authorizeToken } = require('../middlewares/auth.mw');
+const { addSupplier } = require('../utils/supplier.utils')
+const Product = require('../models/Product');
 
 router.get('/all', authorizeToken, async(req, res) => {
     const {_id: userId} = req.userData;
@@ -45,6 +47,24 @@ router.get('/bysupplier/:supplierName', authorizeToken, async(req, res) => {
     } catch (error) {
         console.log(error)
         return res.status(500).json({error: true})
+    }
+})
+
+router.post('/add', authorizeToken, async(req, res) => {
+
+    const userId = req.userData._id;
+    const {name, code, price, description, imagePath, supplierCode, stock} = req.body;
+
+    if(!name || !code || !price || !userId || !supplierCode) return res.sendStatus(400).json({err: 'error'});
+
+    try {
+        const product = new Product({name, code, price, description, imagePath, supplierCode, stock, user_id:userId})
+        await product.save();
+        await addSupplier(supplierCode, userId);
+        res.status(201).json(product);
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({err: 'error'})
     }
 })
 
