@@ -27,13 +27,15 @@ const Card = styled.div`
     grid-template-columns: 40% 60%;
     background-color: white;
     height: 200px;
-    // width: 360px;
-    width: 33%;
-    min-width: 360px;
+    width: max(33%, 360px);
     // margin: 1rem;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     border-radius: 5px;
     padding: 0.5rem;
+
+    @media(max-width: 400px) {
+        width: 100%;
+    }
 `;
 
 const ImageContainer = styled.div`

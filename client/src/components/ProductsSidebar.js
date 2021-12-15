@@ -49,7 +49,7 @@ export default ProductsSidebar
 
 const Container = styled.div`
     background-color: white;
-    min-height: 70vh;
+    // min-height: 70vh;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     border-radius: 8px;
 

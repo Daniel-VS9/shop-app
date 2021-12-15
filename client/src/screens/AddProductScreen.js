@@ -103,8 +103,8 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #fafafa;
-    min-height: 70vh;
-    padding: 1rem;
+    min-height: 82vh;
+    padding: 2rem 1rem 4rem 1rem;
 
     @media (max-width: 1400px) {
         .Container__box {
@@ -121,6 +121,7 @@ const Container = styled.div`
     @media (max-width: 768px) {
         .Container__box {
             width: 90%;
+            padding: 3rem 1rem;
         }
     }
 `
@@ -159,7 +160,8 @@ const Form = styled.form`
 `
 
 const Input = styled.input`
-    margin-bottom: 1.2rem;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
 
     border: none;
     border-bottom: 1px solid #40444c;

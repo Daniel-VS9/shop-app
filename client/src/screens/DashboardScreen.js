@@ -51,19 +51,19 @@ const DashboardScreen = () => {
             <Navbar />
             <Container>
                 <GeneralStatContainer>
-                    <GeneralStatBox className='boxOne'>
+                    <GeneralStatBox className='boxOne box'>
                         <MonetizationOn />
                         Ventas totales
                     </GeneralStatBox>
-                    <GeneralStatBox className='boxTwo'>
+                    <GeneralStatBox className='boxTwo box'>
                         <Looks3 />
                         Numero de ventas
                     </GeneralStatBox>
-                    <GeneralStatBox className='boxThree'>
+                    <GeneralStatBox className='boxThree box'>
                         <Assessment />
                         Venta promedio
                     </GeneralStatBox>
-                    <GeneralStatBox className='boxFour'>
+                    <GeneralStatBox className='boxFour box'>
                         tmp
                     </GeneralStatBox>
                 </GeneralStatContainer>
@@ -102,6 +102,17 @@ const Container = styled.div`
         }
         .pieChart {
             width: 100%;
+        }
+    }
+
+    @media (max-width: 992px) {
+        padding: 3rem 1rem;
+    }
+
+    @media (max-width: 572px) {
+        .box {
+            width: 100%;
+            height: 5rem;
         }
     }
 `

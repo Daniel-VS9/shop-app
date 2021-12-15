@@ -44,8 +44,8 @@ export default DashboardScreen;
 const Container = styled.div`
     background-color: #f4f4f4;
     padding-top: 1rem;
-    // padding-bottom: 2rem;
     padding: 1rem 3rem 2rem 3rem;
+    height: 80vh;
 
     display: grid;
     grid-template-columns: 20% 80%;
@@ -53,5 +53,11 @@ const Container = styled.div`
 
     @media (max-width: 1200px) {
         padding: 1rem 1rem 2rem 1rem;
+    }
+
+    @media (max-width: 35em) {
+        padding: 1rem 1rem 4rem 1rem;
+        display: flex;
+        flex-direction: column;
     }
 `;

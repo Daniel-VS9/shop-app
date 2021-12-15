@@ -69,6 +69,11 @@ const Information = styled.div`
     padding: 3rem 2rem;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+
+    @media(max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 const Description = styled.div`
